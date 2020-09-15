@@ -1,0 +1,17 @@
+<!-- Results - extending exam.html -->
+{% extends 'exam.html' %}
+{% block head %}
+    {{ super() }}
+{% endblock %}
+{% block title %} results {% endblock %}
+{% block content %}
+<table>
+    <tbody>
+        <tr>
+        {% for results in result %}
+            <td>{{ data }}</td>
+        {% endfor %}
+        </tr>
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,50 @@
+<!-- Survey - extending exam.html -->
+{% extends "exam.html" %}
+{% block title %} Q3 {% endblock %}
+{% block head %}
+    {{ super() }}
+<head>
+    <meta charset="UTF-8">
+    <title>Survey</title>
+</head>
+{% endblock %}
+{% block content %}
+    <h1> Please complete the following survey </h1>
+    <fieldset>
+    <form id="survey" method="POST" action="{{ url_for('survey') }}">
+         {{ form.hidden_tag() }}
+        <div class="content">
+            <div>
+                {{ form.email.label }}
+
+                {% if form.email.errors %}
+                        {% for error in form.email.errors %}<span>{{ error }}</span>
+                        {% endfor %}
+                {% else %}
+                 {{ form.email }}
+                {% endif %}
+
+            </div>
+            <div>
+                {{ form.checkbox.label }}
+                {{ form.checkbox }}
+            </div>
+            <div>
+                {{ form.date.label }}
+                {{ form.date }}
+            </div>
+            <div>
+                {{ form.radio.label }}
+                {{ form.radio}}
+            </div>
+            <div>
+                {{ form.submit.label }}
+                {{ form.submit }}
+                {{ form.csrf_token() }}
+
+            </div>
+        </div>
+    </form>
+   </fieldset>
+
+{% endblock %}

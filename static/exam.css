@@ -1,0 +1,91 @@
+<!-- CSS style sheet -->
+* {
+  font-family: "Arial Black", Gadget, sans-serif;
+  letter-spacing: 2px;
+  color: #714f35;
+  text-decoration: none;
+}
+
+code, strong, em {
+  font-family: "Al Nile";
+  font-weight: bolder;
+ }
+
+
+ li {
+    list-style: none;
+}
+
+
+.navbar-left {
+  float: left;
+  color: #000000;
+  background-color: #8ed298;
+  font-size: 120%;
+  font-weight: 700;
+  text-align: center;
+}
+
+.navbar-left a {
+  float: left;
+  color: #000000;
+  font-family: Arial;
+  font-size: 120%;
+}
+
+.navbar-left:hover, .navbar-left a:hover {
+  transition: background-color 0.7s ease;
+  background-color: #b4a36c;
+}
+
+.navbar-left {
+  border: 2px solid darkred;
+  border-radius: 15px;
+  transition: background-color 0.7s ease;
+  width: 215px;
+  height: 600px;
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+}
+
+.content-right{
+  margin-left: 25%;
+}
+
+a:hover {
+  color: #a05858;
+}
+
+a:active {
+  color: #ba3a3a;
+}
+
+<!-- pagination -->
+.pagination {
+    text-align: center;
+}
+.pagination a {
+    text-decoration: none;
+    display: block;
+    color: #aa5d5d;
+}
+.links a:hover {
+  color: #baaa54;
+}
+
+<!-- previous and next pages -->
+
+#prev{
+  font-weight: bolder;
+  float: left;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+#next{
+  font-weight: bolder;
+  float: right;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}

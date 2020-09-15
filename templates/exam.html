@@ -1,0 +1,119 @@
+<!--base template (exam.html) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     {% block head %}
+    <!-- added stylesheet to head -->
+    <link href="static/exam.css" rel="stylesheet" type="text/css">
+    <meta charset="UTF-8">
+    <title>SOEN287-W Take-Home Final Exam</title>
+     {% endblock %}
+</head>
+<body>
+
+<!-- nav bar, vertical floating left. -->
+<h1> <u> Web programming - Final Project </u> </h1>
+<header>
+  <div class="navbar-left">
+    <ul>
+    <a href="{{ url_for('exam') }}" class="nav-link">
+          <li> <img src="static/Site_Icon.png" width="100px" height="100px"> </li>
+    </a>
+    <li><a href="{{ url_for('q1') }}"> Question #1</a></li>
+    <li><a href="{{ url_for('q2') }}"> Question #2</a></li>
+    <li><a href="{{ url_for('q3') }}"> Question #3</a></li>
+    <li><a href="{{ url_for('q4') }}"> Question #4</a></li>
+    </ul>
+ </div>
+ </header>
+<div class="content-right">
+{% block content %}
+<!-- original content, not altered -->
+<p>
+
+    <h2> <u> Course coverage </u> </h2>
+    <p>
+        <ul>
+        <li>- Internet architecture and protocols.</li><li>- Web applications through clients and servers.</li>
+        <li>- I markup languages.</li>
+        <li>- Client-side programming using scripting languages.</li>
+        <li>-  Static website contents & dynamic page generation.</li>
+        <li>- Preserving state in Web applications. </li>
+        </ul>
+
+    <p>
+    The set of questions in my menu are applications of the course material mentioned above.
+    </p>
+
+    <br>
+    Take a look at my <strong> full-featured flask-blog </strong> web application: <br>
+    In the following screenshots you can find my blog! I am interested in the web as a platform i can express myself creatively on.
+    I have been developing my assignment further and thinking of deploying in the near future. <br>
+
+    Check out the full project and source code on Github <a href="https://github.com/samamoun/flaskblog-website"> here </a>.
+    <br>
+    </p>
+    <p>
+    <img src="static/website1.png" width="350px">
+    <img src="static/website2.png" width="350px">
+    <img src="static/website3.png" width="350px">
+    </br>
+    <img src="static/website4.png" width="350px">
+    <img src="static/website5.png" width="350px">
+    <img src="static/website6.png" width="350px">
+    </p>
+    <!-- pagination -->
+  {% if url_for(request.endpoint) == '/q1' %}
+      <div id="links" class="links">
+        <a id="btn_next" href="{{ url_for('q2') }}">Next ></a>
+      </div>
+  {% endif %}
+  {% if url_for(request.endpoint) == '/q2' %}
+      <div id="links" class="links">
+        <a id="btn_prev" href="{{ url_for('q1') }}">< Prev</a>
+        <a id="btn_next" href="{{ url_for('q3') }}">Next ></a>
+      </div>
+  {% endif %}
+  {% if url_for(request.endpoint) == '/q3' %}
+      <div id="links" class="links">
+        <a id="btn_prev" href="{{ url_for('q2') }}">< Prev</a>
+        <a id="btn_next" href="{{ url_for('q4') }}">Next ></a>
+      </div>
+  {% endif %}
+  {% if url_for(request.endpoint) == '/q4' %}
+      <div id="links" class="links">
+        <a id="btn_prev" href="{{ url_for('q3') }}">< Prev</a>
+      </div>
+  {% endif %}
+
+  {% block footer %}
+
+  {% endblock %}
+{% endblock %}
+<!-- links to other questions -->
+  {% if url_for(request.endpoint) == '/q1' %}
+      <div class="pagination">
+        <a id="next" href="{{ url_for('q2') }}"> Next page </a>
+      </div>
+  {% endif %}
+  {% if url_for(request.endpoint) == '/q2' %}
+      <div  class="pagination">
+        <a id="prev" href="{{ url_for('q1') }}"> Previous page</a>
+        <a id="next" href="{{ url_for('q3') }}"> Next page</a>
+      </div>
+  {% endif %}
+  {% if url_for(request.endpoint) == '/q3' %}
+      <div  class="pagination">
+        <a id="prev" href="{{ url_for('q2') }}"> Previous page</a>
+        <a id="next" href="{{ url_for('q4') }}"> Next page</a>
+      </div>
+  {% endif %}
+  {% if url_for(request.endpoint) == '/q4' %}
+      <div class="pagination">
+        <a id="prev" href="{{ url_for('q3') }}"> Previous page</a>
+      </div>
+  {% endif %}
+</div>
+</div>
+</body>
+</html>
