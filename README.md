@@ -1,4 +1,4 @@
-# Web programming final exam questions and implementation 
+# Web programming final project questions and implementation 
 Concordia University Soen 287 Final Take-Home Exam
 
 
