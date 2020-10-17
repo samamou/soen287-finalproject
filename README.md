@@ -1,5 +1,5 @@
 # Web programming final project questions and implementation 
-Concordia University Soen 287 Final Take-Home Exam
+Concordia University Soen 287 Final project
 
 
 ## Flaskform Survey
