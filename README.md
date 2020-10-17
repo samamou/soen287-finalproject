@@ -108,7 +108,7 @@ WTForms          2.3.3
 Python Installation
 https://youtu.be/YYXdXT2l-Gg
 
-Virtual Environment Setup pt 
+Virtual Environment Setup pt 1
 https://youtu.be/N5vscPTWKOk
 
 Virtual Environment Setup pt 2
